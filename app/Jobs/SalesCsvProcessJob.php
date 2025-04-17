@@ -3,12 +3,13 @@
 namespace App\Jobs;
 
 use App\Models\Sales;
+use Illuminate\Bus\Batchable;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SalesCsvProcess implements ShouldQueue
+class SalesCsvProcessJob implements ShouldQueue
 {
-    use Queueable;
+    use Queueable, Batchable;
 
     public $header;
     public $data;
